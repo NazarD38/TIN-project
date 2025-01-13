@@ -58,8 +58,6 @@
 | **Manage Users**                  | Update user roles                                         | Requires a logged-in user with the **admin** role           |
 
 
-
-
 ---
 
 ## Database Schema
@@ -186,14 +184,6 @@ The system supports role-based access control:
 
      module.exports = pool;
      ```
-
-4. **Run Migrations**:
-   - Execute the SQL scripts provided in the project directory to set up the necessary tables:
-     ```bash
-     mysql -u your_username -p system_assassin < path_to_migration.sql
-     ```
-   - Replace `path_to_migration.sql` with the path to your SQL script.
-
 ---
 
 ## Start the Application
