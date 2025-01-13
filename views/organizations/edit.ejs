@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Organization</title>
+    <link rel="stylesheet" href="/css/edit.css">
+</head>
+<body>
+<h1>Edit Organization</h1>
+<% if (errors && errors.length > 0) { %>
+    <div class="error-list">
+        <% errors.forEach(function(error) { %>
+            <div><%= error %></div>
+        <% }); %>
+    </div>
+<% } %>
+<form id="organizationForm" action="/organizations/edit/<%= organization.id %>" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="<%= organization.name %>">
+
+
+    <label for="headquarters">HeadQuarters:</label>
+    <input type="text" name="headquarters" id="headquarters" value="<%= organization.headquarters %>">
+
+
+    <label for="founded_year">Year:</label>
+    <input type="number" name="founded_year" id="founded_year" value="<%= organization.founded_year %>">
+
+
+    <button type="submit">Update Organization</button>
+</form>
+
+<script src="/validation/organizationValidation.js"></script>
+</body>
+</html>

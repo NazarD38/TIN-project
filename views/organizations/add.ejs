@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Organization</title>
+    <link rel="stylesheet" href="/css/add.css">
+</head>
+<body>
+<h1>Add New Organization</h1>
+<% if (errors && errors.length > 0) { %>
+    <div class="error-list">
+        <% errors.forEach(function(error) { %>
+            <div><%= error %></div>
+        <% }); %>
+    </div>
+<% } %>
+<form id="organizationForm" action="/organizations/add" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" ><br>
+
+
+    <label for="headquarters">HeadQuarters:</label>
+    <input type="text" name="headquarters" id="headquarters"><br>
+
+
+    <label for="founded_year">Founder-Year:</label>
+    <input type="number" name="founded_year" id="founded_year"><br>
+
+
+    <button type="submit">Add Organization</button>
+</form>
+<script src="/validation/organizationValidation.js"></script>
+</body>
+</html>

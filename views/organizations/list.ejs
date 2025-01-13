@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organization List</title>
+    <link rel="stylesheet" href="css/list.css">
+</head>
+<body>
+<h1>Organization List</h1>
+<a href="/organizations/add" >Add New Organization </a>
+<ul>
+    <% organizations.forEach(organization => { %>
+        <li>
+            <strong><%= organization.name %></strong>
+            <a href="/organizations/<%= organization.id %>">Details</a> |
+            <a href="/organizations/edit/<%= organization.id %>">Edit</a> |
+            <form action="/organizations/delete/<%= organization.id %>" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    <% }); %>
+</ul>
+<div class="pagination">
+    <% if (page > 1) { %>
+        <a href="/organizations?page=<%= page - 1 %>&limit=5">Previous</a>
+    <% } %>
+    <% for (let i = 1; i <= totalPages; i++) { %>
+        <a href="/organizations?page=<%= i %>&limit=5" class="<%= i === page ? 'active' : '' %>"><%= i %></a>
+    <% } %>
+    <% if (page < totalPages) { %>
+        <a href="/organizations?page=<%= page + 1 %>&limit=5">Next</a>
+    <% } %>
+</div>
+</body>
+</html>

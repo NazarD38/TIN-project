@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Skill</title>
+    <link rel="stylesheet" href="/css/edit.css">
+</head>
+<body>
+<h1>Edit Skill</h1>
+<% if (errors && errors.length > 0) { %>
+    <div class="error-list">
+        <% errors.forEach(function(error) { %>
+            <div><%= error %></div>
+        <% }); %>
+    </div>
+<% } %>
+<form id="skillForm" action="/skills/edit/<%= skill.id %>" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="<%= skill.name || '' %>"><br>
+    <div id="nameError" class="error-item"></div>
+
+    <label for="description">Description:</label>
+    <input type="text" name="description" id="description" value="<%= skill.description || '' %>"><br>
+    <div id="descriptionError" class="error-item"></div>
+
+    <button type="submit">Update Skill</button>
+</form>
+<script src="/validation/skillValidation.js"></script>
+</body>
+</html>

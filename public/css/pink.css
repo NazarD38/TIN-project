@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #ffe4e1; /* Нежно-розовый фон */
+    color: #4b0082; /* Темно-фиолетовый текст */
+    text-shadow: 1px 1px 2px #fff; /* Легкая тень текста */
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ff69b4; /* Ярко-розовый цвет */
+    margin-top: 20px;
+    text-shadow: 2px 2px 5px #fff;
+}
+
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Белый с прозрачностью */
+    padding: 20px 30px; /* Внутренний отступ для формы */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    justify-content: space-between;
+}
+
+form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    color: #4b0082; /* Темно-фиолетовый */
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px; /* Добавим отступ между элементами формы */
+    border: 1px solid #ffb6c1; /* Светло-розовая рамка */
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Внутренняя тень */
+}
+
+form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+form button {
+    background-color: #ff69b4; /* Ярко-розовый фон */
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-weight: bold;
+    margin-top: 20px; /* Добавим отступ сверху для кнопки */
+}
+
+form button:hover {
+    background-color: #ff1493; /* Темно-розовый при наведении */
+    transform: scale(1.05); /* Легкое увеличение */
+}
+
+a {
+    display: inline-block;
+    margin: 20px auto;
+    text-align: center;
+    text-decoration: none;
+    color: #ff69b4;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+a:hover {
+    color: #800080;
+    transform: scale(1.1);
+}
+
+.weapon-details-container {
+    padding: 20px;
+    background-color: #fce4ec;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.weapon-details-content p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.weapon-details-container a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #d81b60;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.weapon-details-container a:hover {
+    text-decoration: underline;
+}
+
+
+.error-list {
+    color: #ff0000;
+    font-size: 0.9rem;
+    margin-top: -10px;
+    display: block;
+}
+
+.error-item {
+    color: #ff0000;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    text-align: center;
+    display: block;
+}

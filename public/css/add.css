@@ -1,0 +1,147 @@
+
+body {
+    background-color: #2c0000;
+    color: #fb6d6d;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+}
+
+
+h1 {
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff1a1a, 0 0 20px #cc0000;
+    font-size: 3rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid #4d0000;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+
+form {
+    background-color: #4d0000;
+    border: 2px solid #ff0000;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+form div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+
+label {
+    color: #ff4d4d;
+    font-weight: bold;
+    min-width: 120px;
+    text-align: right;
+}
+
+
+input, textarea {
+    flex-grow: 1;
+    padding: 10px;
+    border: 2px solid #680000;
+    border-radius: 5px;
+    background-color: #5a0000;
+    color: #fb6d6d;
+    font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff0000;
+    outline: none;
+    box-shadow: 0 0 5px #ff1a1a;
+}
+
+
+button {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #cc0000;
+    box-shadow: 0 0 5px #ff1a1a, 0 0 10px #cc0000;
+}
+
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://img.freepik.com/premium-photo/a-wallpaper-with-blood-dripping-down-the-middle-and-the-word-blood-on-the-bottom_832479-4059.jpg?size=626&ext=jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #680000;
+    border-radius: 5px;
+    background-color: #5a0000;
+    color: #fb6d6d;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: inset 0 0 5px #ff1a1a;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select:focus {
+    border-color: #ff0000;
+    outline: none;
+    box-shadow: 0 0 10px #ff1a1a, 0 0 5px #cc0000;
+}
+
+
+option {
+    background-color: #4d0000;
+    color: #fb6d6d;
+    padding: 5px;
+}
+
+option:hover {
+    background-color: #680000;
+    color: #ffffff;
+}
+
+
+.error-list {
+    color: #40fa00;
+    font-size: 0.9rem;
+    margin-top: -10px;
+    display: block;
+}
+
+.error-item{
+    color: #40fa00;
+    font-size: 0.9rem;
+    margin-top: -10px;
+    display: block;
+}
+
+

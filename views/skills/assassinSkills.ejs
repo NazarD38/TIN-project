@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= assassin.name %> - Skills</title>
+    <link rel="stylesheet" href="/css/detail.css">
+</head>
+<body>
+<div class="details-container">
+    <h1>Skills of Assassin: <%= assassin.name %></h1>
+
+    <% if (skills && skills.length > 0) { %>
+        <div class="skill-list">
+            <ul>
+                <% skills.forEach(function(skill) { %>
+                    <li>
+                        <strong>Skill:</strong> <%= skill.name %> |
+                        <strong>Description:</strong> <%= skill.description %>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    <% } else { %>
+        <p>This assassin doesn't have any skills.</p>
+    <% } %>
+
+    <div class="details-actions">
+        <a href="/assassins/<%= assassin.id %>" class="back-button">Back to Assassin Details</a>
+    </div>
+</div>
+</body>
+</html>

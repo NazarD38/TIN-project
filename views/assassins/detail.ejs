@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="details-title"><%= assassin.name %> Details</title>
+    <link rel="stylesheet" href="/css/detail.css">
+</head>
+<body>
+<div class="details-container">
+    <h1 data-lang-key="details-header">Details for Assassin:</h1>
+
+    <div class="details-content">
+        <p>
+            <strong data-lang-key="details-name">Name:</strong>
+            <span data-lang-key="assassin-name-<%= assassin.id %>"><%= assassin.name%></span>
+        </p>
+        <p>
+            <strong data-lang-key="specialization">Specialization:</strong>
+            <span data-lang-key="assassin-specialization-<%= assassin.id %>"><%= assassin.specialization %></span>
+        </p>
+        <p>
+            <strong data-lang-key="description">Description:</strong>
+            <span data-lang-key="assassin-description-<%= assassin.id %>"><%= assassin.description %></span>
+        </p>
+        <p><strong data-lang-key="price">Price:</strong> $<%= assassin.price %></p>
+        <% if (assassin.image_url) { %>
+            <img src="/photo/<%= assassin.image_url %>" alt="<%= assassin.name %>" class="assassin-photo">
+        <% } %>
+    </div>
+
+    <% if (assassin.organization_name) { %>
+        <div class="organization-details">
+            <h2 data-lang-key="organization-details">Organization Details</h2>
+            <p><strong data-lang-key="org-name">Name:</strong> <%= assassin.organization_name %></p>
+            <p><strong data-lang-key="org-headquarters">Headquarters:</strong> <%= assassin.organization_headquarters %></p>
+            <p><strong data-lang-key="org-founded">Founded Year:</strong> <%= assassin.organization_founded_year %></p>
+        </div>
+    <% } else { %>
+        <p data-lang-key="no-organization">This assassin is not affiliated with any organization.</p>
+    <% } %>
+
+    <div class="details-actions">
+        <a href="/assassins/<%= assassin.id %>/weapons" class="weapons-button" data-lang-key="view-weapons">View Weapons</a>
+        <a href="/assassins/<%= assassin.id %>/skills" class="skills-button" data-lang-key="view-skills">View Skills</a>
+        <a href="/assassins" class="back-button" data-lang-key="back-to-list">Back to Assassins List</a>
+    </div>
+</div>
+
+<script><script src="/validation/assassinValidation.js"></script>
+</body>
+</html>

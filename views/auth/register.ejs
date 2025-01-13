@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+<form action="/register" method="POST" novalidate>
+    <h1>Register</h1>
+    <% if (errors && errors.length > 0) { %>
+        <div class="error-list">
+            <% errors.forEach(function(error) { %>
+                <div class="error-message"><%= error %></div>
+            <% }); %>
+        </div>
+    <% } %>
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username">
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password">
+    <button type="submit">Register</button>
+</form>
+<script src="/validation/registerValidation.js"></script>
+</body>
+</html>

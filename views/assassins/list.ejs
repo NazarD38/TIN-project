@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assassins List</title>
+    <link rel="stylesheet" href="/css/list.css">
+</head>
+<body>
+<h1>Assassins List</h1>
+<% if(user.role === 'admin'){ %>
+    <a href="/assassins/add">Add New Assassin</a>
+<% } %>
+<ul>
+    <% assassins.forEach(assassin => { %>
+        <li>
+            <strong><%= assassin.name %></strong> - <%= assassin.specialization %>
+            <a href="/assassins/<%= assassin.id %>">Details</a>
+            <%if(user.role==='admin'){%>
+            <a href="/assassins/edit/<%= assassin.id %>">Edit</a>
+            <form action="/assassins/delete/<%= assassin.id %>" method="post" style="display:inline;">
+                <button type="submit">Delete</button>
+                <%}%>
+            </form>
+        </li>
+    <% }); %>
+</ul>
+<div class="pagination">
+    <% if (page > 1) { %>
+        <a href="/assassins?page=<%= page - 1 %>&limit=5">Previous</a>
+    <% } %>
+    <% for (let i = 1; i <= totalPages; i++) { %>
+        <a href="/assassins?page=<%= i %>&limit=5" class="<%= i === page ? 'active' : '' %>"><%= i %></a>
+    <% } %>
+    <% if (page < totalPages) { %>
+        <a href="/assassins?page=<%= page + 1 %>&limit=5">Next</a>
+    <% } %>
+</div>
+</body>
+</html>

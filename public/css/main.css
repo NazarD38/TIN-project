@@ -1,0 +1,182 @@
+.lng-header {
+    position: relative;
+    background-image: url("https://img.freepik.com/premium-photo/a-wallpaper-with-blood-dripping-down-the-middle-and-the-word-blood-on-the-bottom_832479-4059.jpg?size=626&ext=jpg");
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 30px;
+    border-radius: 15px;
+    height: 200px;
+}
+
+.lng-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 15px;
+}
+
+.lng-header h1 {
+    position: relative;
+    z-index: 2;
+}
+
+.lng-header-generally {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+}
+
+.header-company-name {
+    background-color: #5a0f0f;
+    border-radius: 16px;
+    color: #ae3030;
+    margin-left: 450px;
+    margin-right: 450px;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #680202;
+    padding: 7px;
+}
+
+.lng-nav {
+    text-align: center;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.lng-nav .button {
+    background-color: #fd0000;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    border-radius: 16px;
+    transition: background-color 0.3s;
+    font-size: larger;
+    text-decoration: none;
+}
+
+.lng-nav .button:hover {
+    background-color: #019715;
+}
+
+body {
+    background-color: #510606;
+    margin-left: 7px;
+    margin-right: 7px;
+    padding: 2px;
+}
+
+.lng-description-main {
+    color: #fb6d6d;
+    background-color: #5a0505;
+    text-align: center;
+    font-size: larger;
+    font-family: 'Impact', 'Fantasy';
+    padding: 15px;
+}
+
+.lng-description-offers {
+    background-color: #420000;
+    color: #fb6d6d;
+    text-align: center;
+    font-size: medium;
+    padding: 20px;
+}
+
+.lng-description-offers ol,
+.lng-description-offers ul {
+    background-color: #5a0505;
+    list-style-position: inside;
+    padding-left: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+.lng-order {
+    background-color: #420000;
+    color: #fb6d6d;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Impact', 'Fantasy';
+}
+
+.lng-footer {
+    background-color: #5a0505;
+    padding: 100px;
+}
+
+.lng-footer .footer-text {
+    color: #fb6d6d;
+    text-align: center;
+    background-color: #5a0505;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #a85252;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(14, 227, 29, 0.2);
+    z-index: 1000;
+}
+
+.modal input {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.language-selector {
+    display: inline-block;
+    margin-left: 20px;
+    padding: 5px 10px;
+    background-color: #5a0505;
+    border-radius: 10px;
+    border: 2px solid #fd0000;
+}
+
+.language-selector label {
+    color: #fb6d6d;
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 10px;
+    text-transform: uppercase;
+}
+
+.language-selector select {
+    background-color: #420000;
+    color: #fb6d6d;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #fd0000;
+    border-radius: 5px;
+    padding: 5px 10px;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.language-selector select:hover {
+    background-color: #5a0505;
+    border-color: #ae3030;
+}
+
+.language-selector select:focus {
+    box-shadow: 0 0 5px #fd0000;
+    border-color: #fd0000;
+}

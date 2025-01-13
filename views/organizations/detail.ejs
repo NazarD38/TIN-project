@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= organization.name %> Details</title>
+    <link rel="stylesheet" href="/css/detail.css">
+</head>
+<body>
+<div class="weapon-details-container">
+    <h1>Details for Organization: <%= organization.name %></h1>
+    <div class="weapon-details-content">
+        <p><strong>Headquarters:</strong> <%= organization.headquarters %></p>
+        <p><strong>Founder-Year:</strong> <%= organization.founded_year %></p>
+    </div>
+    <div class="back-link">
+        <a href="/organizations">Back to Organization List</a>
+    </div>
+</div>
+</body>
+</html>

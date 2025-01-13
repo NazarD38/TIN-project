@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill List</title>
+    <link rel="stylesheet" href="css/list.css">
+</head>
+<body>
+<h1>Skill List</h1>
+<a href="/skills/add">Add New Skill</a>
+<ul>
+    <% skills.forEach(skill => { %>
+        <li>
+            <strong><%= skill.name %></strong>
+            <a href="/skills/<%= skill.id %>">Details</a> |
+            <a href="/skills/edit/<%= skill.id %>">Edit</a> |
+            <form action="/skills/delete/<%= skill.id %>" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    <% }); %>
+</ul>
+
+<div class="pagination">
+    <% if (page > 1) { %>
+        <a href="/skills?page=<%= page - 1 %>&limit=5">Previous</a>
+    <% } %>
+    <% for (let i = 1; i <= totalPages; i++) { %>
+        <a href="/skills?page=<%= i %>&limit=5" class="<%= i === page ? 'active' : '' %>"><%= i %></a>
+    <% } %>
+    <% if (page < totalPages) { %>
+        <a href="/skills?page=<%= page + 1 %>&limit=5">Next</a>
+    <% } %>
+</div>
+</body>
+</html>

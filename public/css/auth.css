@@ -1,0 +1,98 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #ff3333;
+}
+
+form {
+    background: #2b2b2b;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
+    width: 320px;
+    text-align: center;
+    border: 2px solid #ff3333;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #ff0000;
+    text-shadow: 2px 2px 5px #660000;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ff6666;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ff3333;
+    border-radius: 4px;
+    background-color: #1a1a1a;
+    color: #ffcccc;
+}
+
+input::placeholder {
+    color: #ff6666;
+}
+
+button {
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: #cc0000;
+    transform: scale(1.00);
+}
+
+.auth-navigation {
+    margin-top: 10px;
+}
+
+.auth-navigation p {
+    margin: 0;
+    color: #ff6666;
+    font-weight: bold;
+}
+
+.register-button {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.2s;
+}
+
+.register-button:hover {
+    color: #cc0000;
+    transform: scale(1.1);
+}
+
+.error-list {
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: #d9534f;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}

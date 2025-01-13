@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="edit-title">Edit Assassin</title>
+    <link rel="stylesheet" href="/css/edit.css">
+</head>
+<body>
+<div class="language-selector">
+    <label for="language" data-lang-key="language-label">Select Language:</label>
+    <select id="language">
+        <option value="en">English</option>
+        <option value="pl">Polski</option>
+        <option value="uk">Українська</option>
+    </select>
+</div>
+
+<h1 data-lang-key="edit-header">Edit Assassin</h1>
+<% if (errors && errors.length > 0) { %>
+    <div class="error-list">
+        <% errors.forEach(function(error) { %>
+            <div><%= error %></div>
+        <% }); %>
+    </div>
+<% } %>
+<form id="assassinForm" action="/assassins/edit/<%= assassin.id %>" method="POST" enctype="multipart/form-data">
+    <label for="name" data-lang-key="label-name">Name:</label>
+    <input type="text" name="name" id="name" value="<%= assassin.name %>" ><br>
+
+    <label for="specialization" data-lang-key="label-specialization">Specialization:</label>
+    <input type="text" name="specialization" id="specialization" value="<%= assassin.specialization %>" ><br>
+
+    <label for="description" data-lang-key="label-description">Description:</label>
+    <textarea name="description" id="description" ><%= assassin.description %></textarea><br>
+
+    <label for="price" data-lang-key="label-price">Price:</label>
+    <input type="number" name="price" id="price" value="<%= assassin.price %>"><br>
+
+    <label for="image_url" data-lang-key="label-image-url">Image URL:</label>
+    <input type="text" name="image_url" id="image_url" value="<%= assassin.image_url %>"><br>
+
+    <button type="submit" data-lang-key="button-update">Update Assassin</button>
+</form>
+
+<script>
+    const langArr = {
+        "edit-title": { "en": "Edit Assassin", "pl": "Edytuj Zabójcę", "uk": "Редагувати Асасина" },
+        "edit-header": { "en": "Edit Assassin", "pl": "Edytuj Zabójcę", "uk": "Редагувати Асасина" },
+        "language-label": { "en": "Select Language:", "pl": "Wybierz język:", "uk": "Виберіть мову:" },
+        "label-name": { "en": "Name:", "pl": "Imię:", "uk": "Ім'я:" },
+        "label-specialization": { "en": "Specialization:", "pl": "Specjalizacja:", "uk": "Спеціалізація:" },
+        "label-description": { "en": "Description:", "pl": "Opis:", "uk": "Опис:" },
+        "label-price": { "en": "Price:", "pl": "Cena:", "uk": "Ціна:" },
+        "label-image-url": { "en": "Image URL:", "pl": "Adres URL obrazu:", "uk": "URL зображення:" },
+        "button-update": { "en": "Update Assassin", "pl": "Zaktualizuj Zabójcę", "uk": "Оновити Асасина" }
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const languageSelector = document.getElementById("language");
+        const langElements = document.querySelectorAll("[data-lang-key]");
+
+        function translatePage(lang) {
+            langElements.forEach(el => {
+                const key = el.dataset.langKey;
+                if (langArr[key] && langArr[key][lang]) {
+                    el.textContent = langArr[key][lang];
+                }
+            });
+        }
+
+        languageSelector.addEventListener("change", () => {
+            const selectedLanguage = languageSelector.value;
+            translatePage(selectedLanguage);
+            localStorage.setItem("preferredLanguage", selectedLanguage);
+        });
+
+        const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
+        languageSelector.value = savedLanguage;
+        translatePage(savedLanguage);
+    });
+</script>
+</body>
+</html>

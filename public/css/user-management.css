@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3b0d0c; /* Темно-красный фон */
+    color: #fff; /* Белый текст */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin-top: 20px;
+    color: #e60000;
+    text-shadow: 2px 2px 4px #000;
+}
+
+table {
+    width: 80%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #6b0000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+thead {
+    background-color: #9e1b1b;
+}
+
+thead th {
+    padding: 10px;
+    text-align: left;
+    color: #fff;
+    border-bottom: 2px solid #b30000;
+}
+
+tbody tr {
+    border-bottom: 1px solid #b30000;
+}
+
+tbody tr:hover {
+    background-color: #4d0000;
+}
+
+tbody td {
+    padding: 10px;
+    color: #fff;
+}
+
+form {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+select {
+    padding: 5px;
+    border: 1px solid #ff0000;
+    background-color: #4d0000;
+    color: #fbf7f7;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: #e60000;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #e60000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #b30000;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #4d0000;
+}
+
+footer {
+    margin-top: 20px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+.back-button-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-button {
+    padding: 10px 20px;
+    background-color: #e60000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background-color: #b30000;
+    transform: scale(1.05);
+}
+
+.back-button:active {
+    background-color: #4d0000;
+}
+
+
+.pagination a {
+    padding: 8px 12px;
+    background-color: #ffe4e1;
+    border: 1px solid #ffb6c1;
+    color: #8b0000;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.pagination a:hover {
+    background-color: #ffb6c1;
+    transform: scale(1.1);
+}
+
+.pagination a.active {
+    background-color: #8b0000;
+    color: #fff;
+    border: 1px solid #8b0000;
+    font-weight: bold;
+}

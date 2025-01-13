@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Weapon</title>
+    <link rel="stylesheet" href="/css/pink.css">
+</head>
+<body>
+<h1>Edit Weapon: <%= weapon.name %></h1>
+<% if (errors && errors.length > 0) { %>
+    <div class="error-list">
+        <% errors.forEach(function(error) { %>
+            <div class="error-item"><%= error %></div>
+        <% }); %>
+    </div>
+<% } %>
+<form id="weaponForm" action="/weapons/edit/<%= weapon.id %>" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="<%= weapon.name %>"><br>
+    <div id="nameError" class="error-item"></div>
+
+    <label for="type">Type:</label>
+    <input type="text" name="type" id="type" value="<%= weapon.type %>"><br>
+    <div id="typeError" class="error-item"></div>
+
+    <label for="damage">Damage:</label>
+    <input type="number" name="damage" id="damage" value="<%= weapon.damage %>"><br>
+    <div id="damageError" class="error-item"></div>
+
+    <label for="description">Description:</label>
+    <textarea name="description" id="description" rows="4" cols="50"><%= weapon.description %></textarea><br>
+    <div id="descriptionError" class="error-item"></div>
+
+    <button type="submit">Update Weapon</button>
+</form>
+<script src="/validation/weaponValidation.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Assassin</title>
+    <link rel="stylesheet" href="/css/add.css">
+</head>
+<body>
+<h1>Add New Assassin</h1>
+<% if (errors && errors.length > 0) { %>
+    <div class="error-list">
+            <% errors.forEach(function(error) { %>
+                <div><%= error %></div>
+            <% }); %>
+    </div>
+<% } %>
+<form id="assassinForm" action="/assassins/add" method="POST" enctype="multipart/form-data">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" ><br>
+
+    <label for="specialization">Specialization:</label>
+    <input type="text" name="specialization" id="specialization" ><br>
+
+    <label for="description">Description:</label>
+    <textarea name="description" id="description"></textarea><br>
+
+    <label for="price">Price:</label>
+    <input type="number" name="price" id="price" ><br>
+
+    <label for="image_url">Image :</label>
+    <input type="file" name="assassinPhoto"><br><br>
+
+    <button type="submit">Add Assassin</button>
+</form>
+<script src="/validation/assassinValidation.js"></script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= assassin.name %> - Weapons</title>
+    <link rel="stylesheet" href="/css/detail.css">
+</head>
+<body>
+<div class="details-container">
+    <h1>Weapons of Assassin: <%= assassin.name %></h1>
+
+    <% if (weapons && weapons.length > 0) { %>
+        <div class="weapon-list">
+            <ul>
+                <% weapons.forEach(function(weapon) { %>
+                    <li>
+                        <strong>Name:</strong> <%= weapon.name %> |
+                        <strong>Type:</strong> <%= weapon.type %> |
+                        <strong>Damage:</strong> <%= weapon.damage %> |
+                        <strong>Description:</strong> <%= weapon.description %>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    <% } else { %>
+        <p>This assassin doesn't have any weapons.</p>
+    <% } %>
+
+    <div class="details-actions">
+        <a href="/assassins/<%= assassin.id %>" class="back-button">Back to Assassin Details</a>
+    </div>
+</div>
+</body>
+</html>

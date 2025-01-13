@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= weapon.name %> Details</title>
+    <link rel="stylesheet" href="/css/pink.css">
+</head>
+<body>
+<div class="weapon-details-container">
+    <h1>Details for Weapon: <%= weapon.name %></h1>
+    <div class="weapon-details-content">
+        <p><strong>Type:</strong> <%= weapon.type %></p>
+        <p><strong>Damage:</strong> <%= weapon.damage %></p>
+        <p><strong>Description:</strong> <%= weapon.description %></p>
+        <p><strong>Assassin:</strong> <%= weapon.assassin_name %></p>
+    </div>
+    <div class="back-link">
+        <a href="/weapons">Back to Weapons List</a>
+    </div>
+</div>
+</body>
+</html>

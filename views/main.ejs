@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="title">Main Menu</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<header class="lng-header">
+    <div class="lng-header-generally">
+        <img src="https://t4.ftcdn.net/jpg/02/67/04/37/360_F_267043739_9xcJWxtXqUoobQ55S8mpToyxseITr1yq.jpg" class="logo">
+        <div class="header-company-name">
+            <h1 data-lang-key="welcome">Welcome</h1>
+        </div>
+    </div>
+</header>
+
+
+
+<nav class="lng-nav">
+    <% if (user.role === 'admin' || user.role === 'weaponsmith') { %>
+        <a href="/weapons" class="button" data-lang-key="button-weapons">Weapons</a>
+    <% } %>
+    <% if (user.role === 'admin' || user.role === 'witch') { %>
+        <a href="/skills" class="button" data-lang-key="button-skills">Skills</a>
+    <% } %>
+    <% if (user.role === 'admin' || user.role === 'user') { %>
+        <a href="/assassins" class="button" data-lang-key="button-assassins">Assassins</a>
+    <% } %>
+    <% if (user.role === 'admin') { %>
+        <a href="/organizations" class="button" data-lang-key="button-organizations">Organizations</a>
+        <a href="/users" class="button" data-lang-key="button-users">Users</a>
+    <% } %>
+    <a href="/logout" class="button" data-lang-key="button-logout">Logout</a>
+
+        <div class="language-selector">
+            <label for="language" data-lang-key="language-label">Select Language:</label>
+            <select id="language">
+                <option value="en">English</option>
+                <option value="pl">Polski</option>
+                <option value="uk">Українська</option>
+            </select>
+        </div>
+</nav>
+
+<main class="main-content">
+    <form class="lng-description-main">
+        <p data-lang-key="description-main-1">Looking for the perfect solution to your problems? Hitman Corp offers the most qualified assassins on the market!</p>
+        <p data-lang-key="description-main-2">Each of our professionals has many years of experience and is ready to take on the toughest contracts.</p>
+    </form>
+
+    <form class="lng-description-offers">
+        <p data-lang-key="offers-title">We offer a wide range of services, including:</p>
+        <ol>
+            <li data-lang-key="offer-1">Discreet elimination – removal of targets in a way that remains invisible to others.</li>
+            <li data-lang-key="offer-2">Violence in self-defense – assistance in difficult situations when life is at risk.</li>
+            <li data-lang-key="offer-3">"Accident" operations – creating scenarios that appear as unfortunate events.</li>
+            <li data-lang-key="offer-4">Security services – protection of the client from threats.</li>
+            <li data-lang-key="offer-5">Remote eliminations – professional handling of assignments that can be executed remotely.</li>
+        </ol>
+        <p data-lang-key="additional-services">Our services also include:</p>
+        <ul>
+            <li data-lang-key="additional-1">Single elimination contract</li>
+            <li data-lang-key="additional-2">Long-term assignments</li>
+            <li data-lang-key="additional-3">Collaboration with other organizations</li>
+            <li data-lang-key="additional-4">Preparation of the action site</li>
+            <li data-lang-key="additional-5">Post-assignment: cleaning up the crime scene</li>
+        </ul>
+    </form>
+
+    <form class="lng-order">
+        <p data-lang-key="order-now">Don't wait, order the "problem-solving" today.</p>
+    </form>
+</main>
+
+<footer class="lng-footer">
+    <form class="footer-text">
+        <p data-lang-key="footer-text">&copy; 2024 Hitman Corp. All rights reserved.</p>
+    </form>
+</footer>
+
+<script>
+    const langArr = {
+        "title": { "en": "Main Menu", "pl": "Główne Menu", "uk": "Головне Меню" },
+        "welcome": { "en": "Welcome", "pl": "Witamy", "uk": "Ласкаво просимо" },
+        "button-weapons": { "en": "Weapons", "pl": "Broń", "uk": "Зброя" },
+        "button-skills": { "en": "Skills", "pl": "Umiejętności", "uk": "Навички" },
+        "button-assassins": { "en": "Assassins", "pl": "Zabójcy", "uk": "Асасини" },
+        "button-organizations": { "en": "Organizations", "pl": "Organizacje", "uk": "Організації" },
+        "button-users": { "en": "Users", "pl": "Użytkownicy", "uk": "Користувачі" },
+        "button-logout": { "en": "Logout", "pl": "Wyloguj się", "uk": "Вийти" },
+        "description-main-1": { "en": "Looking for the perfect solution to your problems? Hitman Corp offers the most qualified assassins on the market!", "pl": "Szukasz idealnego rozwiązania swoich problemów? Hitman Corp oferuje najbardziej wykwalifikowanych zabójców na rynku!", "uk": "Шукаєте ідеальне рішення своїх проблем? Hitman Corp пропонує найбільш кваліфікованих асасинів на ринку!" },
+        "description-main-2": { "en": "Each of our professionals has many years of experience and is ready to take on the toughest contracts.", "pl": "Każdy z naszych profesjonalistów ma wieloletnie doświadczenie i jest gotowy na najtrudniejsze zadania.", "uk": "Кожен із наших професіоналів має багаторічний досвід і готовий до найскладніших завдань." },
+        "offers-title": { "en": "We offer a wide range of services, including:", "pl": "Oferujemy szeroki zakres usług, w tym:", "uk": "Ми пропонуємо широкий спектр послуг, включаючи:" },
+        "offer-1": { "en": "Discreet elimination – removal of targets in a way that remains invisible to others.", "pl": "Dyskretna eliminacja – usuwanie celów w sposób niewidoczny dla innych.", "uk": "Дискретне усунення – усунення цілей так, щоб це залишалося непомітним для інших." },
+        "offer-2": {
+            "en": "Violence in self-defense – assistance in difficult situations when life is at risk.",
+            "pl": "Przemoc w samoobronie – pomoc w trudnych sytuacjach, gdy życie jest zagrożone.",
+            "uk": "Насильство для самозахисту – допомога у складних ситуаціях, коли загрожує небезпека життю."
+        },
+        "offer-3": {
+            "en": '"Accident" operations – creating scenarios that appear as unfortunate events.',
+            "pl": 'Operacje "Wypadek" – tworzenie scenariuszy, które wyglądają na niefortunne zdarzenia.',
+            "uk": 'Операції "Нещасний випадок" – створення сценаріїв, які виглядають як прикрі події.'
+        },
+        "offer-4": {
+            "en": "Security services – protection of the client from threats.",
+            "pl": "Usługi ochrony – ochrona klienta przed zagrożeniami.",
+            "uk": "Послуги охорони – захист клієнта від загроз."
+        },
+        "offer-5": {
+            "en": "Remote eliminations – professional handling of assignments that can be executed remotely.",
+            "pl": "Zdalne eliminacje – profesjonalna obsługa zadań, które można wykonać zdalnie.",
+            "uk": "Дистанційне усунення – професійне виконання завдань, які можна здійснити дистанційно."
+        },
+        "additional-services": {
+            "en": "Our services also include:",
+            "pl": "Nasze usługi obejmują również:",
+            "uk": "Наші послуги також включають:"
+        },
+        "additional-1": {
+            "en": "Single elimination contract",
+            "pl": "Jednorazowy kontrakt na eliminację",
+            "uk": "Одноразовий контракт на усунення"
+        },
+        "additional-2": {
+            "en": "Long-term assignments",
+            "pl": "Długoterminowe zadania",
+            "uk": "Довгострокові завдання"
+        },
+        "additional-3": {
+            "en": "Collaboration with other organizations",
+            "pl": "Współpraca z innymi organizacjami",
+            "uk": "Співпраця з іншими організаціями"
+        },
+        "additional-4": {
+            "en": "Preparation of the action site",
+            "pl": "Przygotowanie miejsca akcji",
+            "uk": "Підготовка місця дії"
+        },
+        "additional-5": {
+            "en": "Post-assignment: cleaning up the crime scene",
+            "pl": "Po wykonaniu zadania: sprzątanie miejsca zbrodni",
+            "uk": "Після завдання: прибирання місця злочину"
+        },
+        "order-now": {
+            "en": "Don't wait, order the \"problem-solving\" today.",
+            "pl": "Nie czekaj, zamów \"rozwiązanie problemu\" już dziś.",
+            "uk": "Не чекайте, замовте \"вирішення проблем\" вже сьогодні."
+        },
+        "footer-text": {
+            "en": "2024 Hitman Corp. All rights reserved.",
+            "pl": "2024 Hitman Corp. Wszelkie prawa zastrzeżone.",
+            "uk": "2024 Hitman Corp. Всі права захищені."
+        }
+    };
+
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const languageSelector = document.getElementById("language");
+        const langElements = document.querySelectorAll("[data-lang-key]");
+
+        function translatePage(lang) {
+            langElements.forEach(el => {
+                const key = el.dataset.langKey;
+                if (langArr[key] && langArr[key][lang]) {
+                    el.textContent = langArr[key][lang];
+                }
+            });
+        }
+
+        languageSelector.addEventListener("change", () => {
+            const selectedLanguage = languageSelector.value;
+            translatePage(selectedLanguage);
+            localStorage.setItem("preferredLanguage", selectedLanguage);
+        });
+
+        const savedLanguage = localStorage.getItem("preferredLanguage") || "en";
+        languageSelector.value = savedLanguage;
+        translatePage(savedLanguage);
+    });
+</script>
+</body>
+</html>

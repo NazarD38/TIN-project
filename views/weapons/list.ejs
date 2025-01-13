@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weapons List</title>
+    <link rel="stylesheet" href="css/weaponList.css">
+</head>
+<body>
+<h1>Weapons List</h1>
+<a href="/weapons/add" >Add New Weapon </a>
+<ul>
+    <% weapons.forEach(weapon => { %>
+        <li>
+            <strong><%= weapon.name %></strong> - <%= weapon.type %> |
+            <a href="/weapons/<%= weapon.id %>">Details</a> |
+            <a href="/weapons/edit/<%= weapon.id %>">Edit</a> |
+            <form action="/weapons/delete/<%= weapon.id %>" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    <% }); %>
+</ul>
+<div class="pagination">
+    <% if (page > 1) { %>
+        <a href="/weapons?page=<%= page - 1 %>&limit=5">Previous</a>
+    <% } %>
+    <% for (let i = 1; i <= totalPages; i++) { %>
+        <a href="/weapons?page=<%= i %>&limit=5" class="<%= i === page ? 'active' : '' %>"><%= i %></a>
+    <% } %>
+    <% if (page < totalPages) { %>
+        <a href="/weapons?page=<%= page + 1 %>&limit=5">Next</a>
+    <% } %>
+</div>
+
+</body>
+</html>
